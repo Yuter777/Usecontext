@@ -1,0 +1,118 @@
+{
+  "students": [
+    {
+      "id": "2",
+      "firstName": "Olim",
+      "lastName": "Karimov",
+      "group": "A1"
+    },
+    {
+      "id": "3",
+      "firstName": "Hasan",
+      "lastName": "Abdullayev",
+      "group": "B2"
+    },
+    {
+      "id": "4",
+      "firstName": "Husan",
+      "lastName": "Usmonov",
+      "group": "B2"
+    },
+    {
+      "id": "5",
+      "firstName": "Dilshod",
+      "lastName": "Akbarov",
+      "group": "C3"
+    },
+    {
+      "id": "6",
+      "firstName": "Jasur",
+      "lastName": "Bekmurodov",
+      "group": "C3"
+    },
+    {
+      "id": "7",
+      "firstName": "Shavkat",
+      "lastName": "Yusupov",
+      "group": "D4"
+    },
+    {
+      "id": "8",
+      "firstName": "Murod",
+      "lastName": "Salimov",
+      "group": "D4"
+    },
+    {
+      "id": "9",
+      "firstName": "Olimjon",
+      "lastName": "Shamsiddinov",
+      "group": "E5"
+    },
+    {
+      "id": "10",
+      "firstName": "Asad",
+      "lastName": "Ergashev",
+      "group": "E5"
+    },
+    {
+      "id": "11",
+      "firstName": "Gulnora",
+      "lastName": "Nabieva",
+      "group": "F6"
+    },
+    {
+      "id": "12",
+      "firstName": "Nigora",
+      "lastName": "Rustamova",
+      "group": "F6"
+    },
+    {
+      "id": "13",
+      "firstName": "Madina",
+      "lastName": "Tursunova",
+      "group": "G7"
+    },
+    {
+      "id": "14",
+      "firstName": "Mavluda",
+      "lastName": "Sodiqova",
+      "group": "G7"
+    },
+    {
+      "id": "15",
+      "firstName": "Dilnoza",
+      "lastName": "Xolmatova",
+      "group": "H8"
+    },
+    {
+      "id": "16",
+      "firstName": "Shahnoza",
+      "lastName": "Zokirova",
+      "group": "H8"
+    },
+    {
+      "id": "17",
+      "firstName": "Umida",
+      "lastName": "Toshpulatova",
+      "group": "I9"
+    },
+    {
+      "id": "18",
+      "firstName": "Oydin",
+      "lastName": "Oripova",
+      "group": "I9"
+    },
+    {
+      "id": "19",
+      "firstName": "Feruza",
+      "lastName": "Qodirova",
+      "group": "J10"
+    },
+    {
+      "id": "20",
+      "firstName": "Aziza",
+      "lastName": "Mirzayeva",
+      "group": "J10"
+    }
+  ]
+}
