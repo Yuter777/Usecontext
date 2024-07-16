@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Button, Modal } from "react-bootstrap";
+import { PostContext } from "../Contexts/MainContext";
 
-const EditTodo = ({ editModal, handleClose, updateTodo, todoEditing }) => {
+const EditTodo = ({ editModal, handleClose, todoEditing }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [group, setGroup] = useState("");
+  const { dispatch, updateTodo } = useContext(PostContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,14 +16,16 @@ const EditTodo = ({ editModal, handleClose, updateTodo, todoEditing }) => {
       lastName,
       group,
     });
-    handleClose();
-    location.reload();
+    handleClose;
+    dispatch({ type: "TOGGLE_EDIT_MODAL", payload: false });
   };
 
   useEffect(() => {
-    setFirstName(todoEditing.firstName);
-    setLastName(todoEditing.lastName);
-    setGroup(todoEditing.group);
+    if (todoEditing) {
+      setFirstName(todoEditing.firstName);
+      setLastName(todoEditing.lastName);
+      setGroup(todoEditing.group);
+    }
   }, [todoEditing]);
 
   return (
@@ -30,10 +34,10 @@ const EditTodo = ({ editModal, handleClose, updateTodo, todoEditing }) => {
         <Modal.Title>Edit the todo</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-3">
-            <label htmlFor="title" className="form-label">
-              Title
+            <label htmlFor="firstName" className="form-label">
+              Firstname
             </label>
             <input
               type="text"
@@ -41,23 +45,29 @@ const EditTodo = ({ editModal, handleClose, updateTodo, todoEditing }) => {
               placeholder="Firstname"
               className="form-control mb-2"
               value={firstName}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
             />
+            <label htmlFor="lastName" className="form-label">
+              Lastname
+            </label>
             <input
               type="text"
               id="lastName"
               placeholder="Lastname"
               className="form-control mb-2"
               value={lastName}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
             />
+            <label htmlFor="group" className="form-label">
+              Group
+            </label>
             <input
               type="text"
               id="group"
               placeholder="Group"
               className="form-control mb-2"
               value={group}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => setGroup(e.target.value)}
             />
           </div>
         </form>

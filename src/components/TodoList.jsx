@@ -1,39 +1,34 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import EditTodo from "./EditTodo";
+import { PostContext } from "../Contexts/MainContext";
 
-const TodoList = ({
-  todos,
-  setAddModal,
-  editModal,
-  setEditModal,
-  deleteTodo,
-  updateTodo,
-}) => {
+const TodoList = () => {
+  const { state, dispatch, deleteTodo, updateTodo } = useContext(PostContext);
   const [todoEditing, setTodoEditing] = useState({});
 
   const handleDelete = (id) => {
     if (confirm("Ochirishni xohlaysizmi?")) {
       deleteTodo(id);
-      location.reload();
     }
-    setAddModal(false);
   };
 
   const handleEdit = (todo) => {
-    setEditModal(true);
+    dispatch({ type: "TOGGLE_EDIT_MODAL", payload: true });
     setTodoEditing(todo);
   };
 
   return (
     <>
-      {editModal && (
+      {state.editModal && (
         <EditTodo
-          editModal={editModal}
-          handleClose={() => setEditModal(false)}
+          editModal={state.editModal}
+          handleClose={() =>
+            dispatch({ type: "TOGGLE_EDIT_MODAL", payload: false })
+          }
           updateTodo={updateTodo}
-          todos={todos}
+          todos={state.todos}
           todoEditing={todoEditing}
         />
       )}
@@ -49,7 +44,7 @@ const TodoList = ({
           </tr>
         </thead>
         <tbody>
-          {todos?.map((todo, i) => (
+          {state.filteredTodos?.map((todo, i) => (
             <tr key={todo.id} className="">
               <td>{i + 1}</td>
               <td>{todo.firstName}</td>
