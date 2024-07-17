@@ -43,14 +43,7 @@ function Todos() {
       {state.loading && <Loader />}
 
       {state.filteredTodos.length > 0 && (
-        <TodoList
-        // todos={state.filteredTodos}
-        // setAddModal={setAddModal}
-        // editModal={editModal}
-        // setEditModal={setEditModal}
-        // deleteTodo={deleteTodo}
-        // updateTodo={updateTodo}
-        />
+        <TodoList />
       )}
     </div>
   );
